@@ -17,7 +17,16 @@ const { title } = Astro.props;
   </head>
   <body>
     <!-- <div class="page-border"></div> -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <nav>
+          <a href="/"><span class="emoji">🤘</span>Steven Remenapp</a>
+          <a href="/build-that-thing">Build That Thing</a>
+        </nav>
+      </div>
+    </header>
     <slot />
+    <footer>💀</footer>
   </body>
 </html>
 <style is:global>
@@ -34,6 +43,15 @@ const { title } = Astro.props;
     font-family: Arial, system-ui, sans-serif;
     background-color: #f6f6f6;
   }
+
+  body {
+    margin: 0;
+    font-size: 1.05em;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
   /* .page-border {
     position: fixed;
     top: 0;
@@ -43,8 +61,83 @@ const { title } = Astro.props;
     border: 20px solid transparent;
     border-image: url("/border.svg") 24 round;
   } */
+
+  .navbar {
+    width: 100%;
+  }
+
+  .navbar-container {
+    padding: 2em;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: black;
+  }
+
+  nav a:hover,
+  nav a:focus {
+    text-decoration: underline;
+  }
+
+  .emoji {
+    display: inline-block;
+    user-select: none;
+    transform-origin: bottom;
+    margin-right: 8px;
+    filter: drop-shadow(1px 1px 3px #e40ab1) drop-shadow(-1px -1px 3px #e40ab1);
+    animation: 2s rotateTheHorns infinite;
+  }
+
+  .container {
+    flex: 1 1 auto;
+    max-width: 55em;
+    padding: 2em;
+    margin: 0 auto;
+  }
+
+  a {
+    color: black;
+  }
+
+  h1 {
+    margin-bottom: 0.25em;
+  }
+
+  p {
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  footer {
+    padding: 0 0.5em 0.5em 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3em;
+    user-select: none;
+  }
+
   code {
     font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
       DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+  }
+
+  @keyframes rotateTheHorns {
+    0% {
+      transform: translateY(-2px) rotateY(0deg);
+    }
+    50% {
+      transform: translateY(2px) rotateY(360deg);
+    }
+    100% {
+      transform: translateY(-2px) rotateY(0deg);
+    }
   }
 </style>

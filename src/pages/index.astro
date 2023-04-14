@@ -3,22 +3,14 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="🤘 | Steven Remenapp">
-  <header class="navbar">
-    <div class="navbar-container">
-      <nav>
-        <a href="/"><span class="emoji">🤘</span>Steven Remenapp</a>
-        <a href="/build-that-thing">Build That Thing</a>
-      </nav>
-    </div>
-  </header>
-  <main>
+  <main class="container">
     <h1>Hi, I'm Steve!</h1>
     <p>
       I'm a person in Kalamazoo, MI working as a frontend engineer. I used to be
       a public librarian, and I think that informs all the digital work I do for
       the better.
     </p>
-    <p class="note">Welcome, and a note about this site:</p>
+    <p>Welcome, and a note about this site:</p>
     <p>
       tldr; just making fun things for myself on the <a href="/build-that-thing"
         >Build That Thing</a
@@ -45,95 +37,11 @@ import Layout from "../layouts/Layout.astro";
       have had a bit of fun.
     </p>
   </main>
-  <footer>💀</footer>
 </Layout>
 
 <style>
-  body {
-    margin: 0;
-    font-size: 1.05em;
-  }
-
-  .navbar {
-    width: 100%;
-  }
-
-  .navbar-container {
-    padding: 2em;
-  }
-
-  nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  nav a {
-    text-decoration: none;
-    color: black;
-  }
-
-  a:hover,
-  a:focus {
-    text-decoration: underline;
-  }
-
-  a {
-    color: black;
-  }
-
-  .emoji {
-    display: inline-block;
-    user-select: none;
-    transform-origin: bottom;
-    margin-right: 8px;
-    filter: drop-shadow(1px 1px 3px #e40ab1) drop-shadow(-1px -1px 3px #e40ab1);
-    animation: 2s rotateTheHorns infinite;
-  }
-
-  main {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 auto;
-    max-width: 75em;
-    padding: 2em;
-  }
-
-  h1 {
-    margin-bottom: 0.25em;
-  }
-
-  p {
-    margin-bottom: 0;
-    line-height: 1.5;
-  }
-
-  .note {
-    text-decoration: underline;
-  }
-
   img {
     margin-top: 1em;
-  }
-
-  footer {
-    padding: 0 0.5em 0.5em 0.5em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3em;
-    user-select: none;
-  }
-
-  @keyframes rotateTheHorns {
-    0% {
-      transform: translateY(-2px) rotateY(0deg);
-    }
-    50% {
-      transform: translateY(2px) rotateY(360deg);
-    }
-    100% {
-      transform: translateY(-2px) rotateY(0deg);
-    }
+    max-width: 100%;
   }
 </style>
