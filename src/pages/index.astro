@@ -2,51 +2,138 @@
 import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout title="🤘">
+<Layout title="🤘 | Steven Remenapp">
+  <header class="navbar">
+    <div class="navbar-container">
+      <nav>
+        <a href="/"><span class="emoji">🤘</span>Steven Remenapp</a>
+        <a href="/build-that-thing">Build That Thing</a>
+      </nav>
+    </div>
+  </header>
   <main>
-    <div class="emoji">🤘</div>
+    <h1>Hi, I'm Steve!</h1>
+    <p>
+      I'm a person in Kalamazoo, MI working as a frontend engineer. I used to be
+      a public librarian, and I think that informs all the digital work I do for
+      the better.
+    </p>
+    <p class="note">Welcome, and a note about this site:</p>
+    <p>
+      tldr; just making fun things for myself on the <a href="/build-that-thing"
+        >Build That Thing</a
+      > page without thinking too much about it.
+    </p>
+    <p>
+      I'm not sure what I want this site to be yet. I've been making digital
+      things for other people for long enough that I lost sight what I want my
+      own site to be, and why I even want my own site. While I've generally
+      enjoyed building for others, it did make it harder to figure out what I
+      wanted to build for myself, and that led to this space going offline for
+      years. I used to have a fairly specific/campy aesthetic, as evidenced by
+      the gif below of my previous portfolio site:
+    </p>
+    <img src="/old_portfolio.gif" />
+    <p>
+      I liked that site because it was fun for me to make and it was fun for
+      visitors to make their own emoji art. But that doesn't speak to me
+      anymore, and I'm still not sure what does. So maybe the goal here is to
+      make pointless things purely for fun without feeling like I need to make
+      the entire site pixel perfect (which is what I do everyday at work). I
+      think that once I allow myself to just make things for fun again, what I
+      want this site to be will make more sense. If not, then at least I will
+      have had a bit of fun.
+    </p>
   </main>
+  <footer>💀</footer>
 </Layout>
 
 <style>
   body {
     margin: 0;
-    height: 100vh;
-    display: flex;
-    background: rgb(2, 0, 36);
-    background: radial-gradient(
-      circle,
-      rgba(2, 0, 36, 1) 20%,
-      rgba(110, 9, 121, 1) 40%,
-      rgba(74, 85, 164, 1) 67%,
-      rgba(0, 212, 255, 1) 100%
-    );
+    font-size: 1.05em;
   }
+
+  .navbar {
+    width: 100%;
+  }
+
+  .navbar-container {
+    padding: 2em;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: black;
+  }
+
+  a:hover,
+  a:focus {
+    text-decoration: underline;
+  }
+
+  a {
+    color: black;
+  }
+
+  .emoji {
+    display: inline-block;
+    user-select: none;
+    transform-origin: bottom;
+    margin-right: 8px;
+    filter: drop-shadow(1px 1px 3px #e40ab1) drop-shadow(-1px -1px 3px #e40ab1);
+    animation: 2s rotateTheHorns infinite;
+  }
+
   main {
     display: flex;
     flex-direction: column;
+    flex: 1 1 auto;
+    max-width: 75em;
+    padding: 2em;
+  }
+
+  h1 {
+    margin-bottom: 0.25em;
+  }
+
+  p {
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  .note {
+    text-decoration: underline;
+  }
+
+  img {
+    margin-top: 1em;
+  }
+
+  footer {
+    padding: 0 0.5em 0.5em 0.5em;
+    display: flex;
     align-items: center;
     justify-content: center;
-    flex: 1 1 auto;
-  }
-  .emoji {
-    font-size: 10em;
+    font-size: 3em;
     user-select: none;
-    transform-origin: bottom;
-    filter: drop-shadow(5px 5px 15px #e40ab1)
-      drop-shadow(-5px -5px 15px #e40ab1);
-    animation: 2s rotateTheHorns infinite;
   }
 
   @keyframes rotateTheHorns {
     0% {
-      transform: translateY(0) rotateY(0deg);
+      transform: translateY(-2px) rotateY(0deg);
     }
     50% {
-      transform: translateY(10px) rotateY(360deg);
+      transform: translateY(2px) rotateY(360deg);
     }
     100% {
-      transform: translateY(0) rotateY(0deg);
+      transform: translateY(-2px) rotateY(0deg);
     }
   }
 </style>
