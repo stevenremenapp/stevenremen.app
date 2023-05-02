@@ -1,0 +1,51 @@
+---
+layout: ../../layouts/BlogPostLayout.astro
+title: SVG Halftone Borders
+author: Steven Remenapp
+date: 2023-04-21
+description: Create a halftone pattern page border with SVG and CSS, and maybe learn a bit about SVG in the process.
+---
+
+<img
+  aria-hidden="true"
+  class="page-border"
+  src="/border.svg"
+  style="z-index: -1; position: fixed; top: 0; left: 0; height: 100%; width: 100%;"
+/>
+
+## Inspiration
+
+I recently started a screenprinting class at the local art school and fell
+in love with the physical printing process, and the freedom and
+opportunity for happy mistakes that it allows. In particular, I found
+myself interested in the halftone pattern, which we all are likely aware
+of (even if we don't know the name) thanks to pop art. Perhaps the most
+prominent pop artist to use them was [Roy Lichtenstein](https://www.google.com/search?q=roy+lichtenstein).
+I've also been enjoying Ben Rider's screenprint work, and noticed that he sometimes uses halftone patterns as a decorative part of a larger
+whole, or other times as a border, like in his Liz poster in the
+[Leake Street Mural](https://www.benrider.com/Leake-Street-mural)
+. So all off this was in my head, and all the while I've always found a
+border on a webpage fun (so much so that my very first portfolio was
+nothing but borders within borders).
+
+## Question
+
+How can we make a halftone border around a webpage?
+
+## Process
+
+I know that gradient and image borders via CSS are a thing, so let's start
+there. My first attempt was to use a radial gradient as the
+border-image-source, essentially making a Frankenstein border combining
+the CSS halftone path suggested by Michelle Barker<sup>[1](https://css-irl.info/css-halftone-patterns/)</sup>
+and the gradient border path suggested by Chris Coyier<sup>[2](https://css-tricks.com/gradient-borders-in-css/)</sup>.
+However, after making it work with border-image: it is not
+browser-friendly. Chromium browsers work fine, but Firefox gets weird and
+Safari doesn't work at all.
+
+This write-up is still in process :)
+
+## References
+
+1. Michelle Barker, [CSS Halftone Patterns](https://css-irl.info/css-halftone-patterns/)
+2. Chris Coyier, [Gradient Borders in CSS](https://css-tricks.com/gradient-borders-in-css/)
